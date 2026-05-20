@@ -1,0 +1,19 @@
+# Google XR 公式情報源 registry (Phase 1 = 空、 Phase 2 で URL 確定 + 充填)
+#
+# even-conversate-ops/knowledge/even-official/sources.yml と同 schema:
+#   - id: <kebab-case slug>
+#     url: <canonical URL>
+#     priority: 1=◎ (sync 必須) / 2=◯ (補助) / 3=△ (参考)
+#     fetch_cadence: weekly / monthly / on-demand
+#     fetch_method: zendesk-api / itunes-lookup-api / curl+textutil / git-clone / WebFetch
+#     snapshot_file: snapshots/ 配下の filename
+#     note: 何を取るか / 制約
+
+sources: []
+
+# Phase 2 で着手:
+# - Android XR 公式 docs (developers.google.com)
+# - Project Aura Developer Catalyst Program (Google for Developers / blog)
+# - Warby Parker Intelligent Eyewear product page (Cloudflare bot block 確認済、 UA + 別 method 必要)
+# - XREAL Aura HW kit developer site
+# - 関連 GitHub repo (Android XR sample / Aura SDK 等、 公式 org あれば clone)
