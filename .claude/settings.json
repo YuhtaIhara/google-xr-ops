@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_notes": [
+    "team 共有設定の正本。 案件で permissions / hooks / env を編集可。",
+    "env: team で共有する非機密キーのみ。 機密値は .env* 経由で別管理 (rules/security-secrets.md 参照)。",                 
+    "permissions / hooks は user-level (~/.claude/settings.json) と重複してよい (defense in depth)。",
+    "公式 docs: https://code.claude.com/docs/en/settings"
+  ],
+  "env": {},
+  "permissions": {
+    "deny": [
+      "Bash(git reset --hard)",
+      "Bash(git reset --hard *)",
+      "Bash(git checkout -f)",
+      "Bash(git checkout -f *)",
+      "Bash(git checkout -B *)",
+      "Bash(git switch -C *)",
+      "Bash(git checkout -- *)",
+      "Bash(git clean *)",
+      "Bash(git branch -D *)",
+      "Bash(git worktree remove *)",
+      "Bash(rm *)",
+      "Bash(*rm -rf*)",
+      "Bash(rmdir *)",
+      "Bash(find * -delete)",
+      "Bash(find * -delete *)",
+      "Bash(*Remove-Item*)",
+      "Bash(* del *)",
+      "Bash(* erase *)",
+      "Bash(sudo *)",
+      "Read(.env)",
+      "Read(.env.local)",
+      "Read(.env.*.local)",
+      "Read(.env.development)",
+      "Read(.env.production)",
+      "Read(.env.staging)",
+      "Read(.env.test)",
+      "Edit(.env)",
+      "Edit(.env.local)",
+      "Edit(.env.*.local)",
+      "Edit(.env.development)",
+      "Edit(.env.production)",
+      "Edit(.env.staging)",
+      "Edit(.env.test)",
+      "Edit(.claude/settings.json)",
+      "Edit(.claude/hooks/**)",
+      "Edit(.claude/rules/README.md)",
+      "Edit(.claude/rules/global.md)",
+      "Edit(.claude/rules/branching.md)",
+      "Edit(.claude/rules/permissions.md)",
+      "Edit(.claude/rules/security-secrets.md)",
+      "Bash(gh workflow run *production*)",
+      "Bash(gh workflow run *prod*)",
+      "Bash(*production*)"
+    ],
+    "ask": [
+      "Bash(git push)",
+      "Bash(git push *)",
+      "Bash(gh pr merge)",
+      "Bash(gh pr merge *)",
+      "Bash(git commit)",
+      "Bash(git commit *)",
+      "Bash(git merge)",
+      "Bash(git merge *)",
+      "Bash(git rebase)",
+      "Bash(git rebase *)",
+      "Bash(git cherry-pick)",
+      "Bash(git cherry-pick *)",
+      "Bash(git revert)",
+      "Bash(git revert *)",
+      "Bash(git reset)",
+      "Bash(git reset *)",
+      "Bash(git restore)",
+      "Bash(git restore *)",
+      "Bash(git tag)",
+      "Bash(git tag *)",
+      "Bash(gh pr create)",
+      "Bash(gh pr create *)",
+      "Bash(gh workflow run)",
+      "Bash(gh workflow run *)",
+      "Bash(gh run rerun)",
+      "Bash(gh run rerun *)",
+      "Bash(* deploy)",
+      "Bash(* deploy *)",
+      "Bash(*deploy*)",
+      "Edit(.claude/**)"
+    ],
+    "allow": [
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff)",
+      "Bash(git diff *)",
+      "Bash(git log)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(* --help)",
+      "Bash(* --help *)",
+      "Bash(* --version)",
+      "Bash(* --version *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read|Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/pre-tool-use.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

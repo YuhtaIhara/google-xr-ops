@@ -1,0 +1,35 @@
+version: 2
+updates:
+  # テンプレに workflow ファイルがあるため既定で有効化
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "security"
+
+  # manifest を採用したら有効化する任意 ecosystem:
+  # - package-ecosystem: "npm"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #
+  # - package-ecosystem: "pip"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #
+  # - package-ecosystem: "terraform"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #
+  # - package-ecosystem: "docker"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"

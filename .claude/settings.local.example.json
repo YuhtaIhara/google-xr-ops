@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_notes": [
+    "settings.local.json にコピーして個人 override に使う (.gitignore 対象、 commit しない)。",
+    "permissions / hooks を書かない (共有ガードを個人で上書き禁止、 .claude/rules/permissions.md 参照)。",
+    "公式 docs: https://code.claude.com/docs/en/settings"
+  ],
+  "env": {},
+  "model": "inherit",
+  "statusLine": {},
+  "outputStyle": "Default"
+}

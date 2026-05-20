@@ -1,0 +1,16 @@
+# CODEOWNERS — 自動 reviewer 配置
+# https://docs.github.com/en/repositories/managing-your-repositories-settings-and-customizations/customizing-your-repository/about-code-owners
+
+# 配布先 org の owner / tech lead を設定する。 案件で本 file を編集する場合:
+# - `*` 行: 全変更の default reviewer (org admin / tech lead group)
+# - 領域別行: `.claude/` (AI 規範) / `.github/` (CI) はより慎重に
+
+# 全体 default
+* @YuhtaIhara
+
+# AI 規範・設定変更は tech lead group の承認必須
+/.claude/      @YuhtaIhara
+/CLAUDE.md     @YuhtaIhara
+
+# CI / workflow 変更
+/.github/      @YuhtaIhara

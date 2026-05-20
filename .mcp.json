@@ -1,0 +1,8 @@
+{
+  "_notes": [
+    "MCP server 配置雛形。 案件で必要な server を mcpServers に追加。",
+    "秘密値は env expansion (${VAR}) で外部から渡す。 平文 token / API key を本 file に書かない。",
+    "公式 docs: https://code.claude.com/docs/en/mcp"
+  ],
+  "mcpServers": {}
+}
