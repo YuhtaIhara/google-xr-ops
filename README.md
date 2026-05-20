@@ -1,124 +1,57 @@
-# ai-driven-template
+# google-xr-ops
 
-**Delight Inc. 社内向け、 Claude Code 統合スターターテンプレート (薄いひな形)**。 スタック非依存。
+> Google Android XR エコシステムの ops repo。 **(a) Warby Parker Intelligent Eyewear** (consumer、 購入 + 活用) と **(b) Project Aura Developer Catalyst Program** (developer、 応募 + 開発) の 2 方向を 1 repo で運用。
 
-- ✅ **secret 漏洩 / 破壊操作の machine-level 防止** — `.env*` access / `rm -rf` / `git push --force` 等を AI が試みても自動拒否
-- ✅ **会社の最低限基準** — global / branching / permissions / security-secrets で全社共通ガード
-- ✅ **placeholder を埋めるだけ** で 案件 1-2 時間で onboard
+## 経緯 (2026-05-19 二重発表)
 
-**最初にやること** → 下の「Claude Code セットアップ」 を順に。
+- **2026-05-19** Google が「Android XR Developer Catalyst Program」 を発表 ([mogura VR 記事](https://www.moguravr.com/android-xr-developer-catalyst/))
+  - XREAL Project Aura 有線 XR グラス HW kit + audio glasses + display glasses 提供
+  - 助成金 + 技術リソース support
+  - 対象: 北米 / 英国 / EU / **日本**、 今後 6-12 ヶ月以内に Android XR アプリリリース予定の開発者
+  - **応募締切 2026-06-30**、 結果通知 2026-07-15
+- **同日** Warby Parker が Google Android XR powered の Intelligent Eyewear を発表 ([warbyparker.com/intelligent-eyewear](https://www.warbyparker.com/intelligent-eyewear)、 2026 秋発売予定)
 
-## Claude Code セットアップ
+→ user は Google XR エコシステムに all-in 方針、 Warby Parker を個人購入 + Project Aura に開発参加申請 で並行運用、 本 repo はその ops 拠点。
 
-> ⚠️ **重要**: ローカルで本テンプレフォルダを **コピーしてリネーム** する運用をしない。 GitHub 側で派生 repo を作らずに作業を始めると、 ローカル remote が `ai-driven-template` を指したままになり、 初回 push や PR 作成で詰まる。 下記 Step 2 を **必ず GitHub から** 始めること。 既にコピー運用で始めてしまった場合は [トラブルシュート](#トラブルシュート) を参照。
+## ディレクトリ構成
 
-### Step 1. Claude Code を install
-
-[Claude Code](https://claude.com/product/claude-code) を install。
-
-### Step 2. 派生 repo を **GitHub から** 作成
-
-```bash
-# 推奨: gh CLI でテンプレ派生 repo を作成 + ローカル clone
-gh repo create YuhtaIhara/<案件名> --template YuhtaIhara/ai-driven-template --private --clone
-cd <案件名>
-
-# または GitHub UI:
-#   「Use this template」 → 「Create a new repository」 → owner と repo 名を指定 → ローカルに git clone <派生 repo>
+```
+google-xr-ops/
+├ knowledge/
+│  └ google-xr-official/        # 公式 source sync 基盤 (Phase 2 で充填)
+├ project-aura/                  # Developer Catalyst Program 参加 work
+│  ├ application/                # pitch 資料 (締切 2026-06-30)
+│  └ apps/                       # (採択後) 開発成果物
+├ devices/
+│  └ warby-intelligent-eyewear/  # 購入予定端末の use case + 設定 + retrospect
+├ docs/
+│  └ google-xr-design.md         # 累積される設計判断
+├ scripts/                       # (Phase 2) sync / audit (even-conversate-ops から借用予定)
+└ .claude/                       # rules / hooks / settings (ai-driven-template base)
 ```
 
-これで:
-- GitHub 上に派生 repo (`YuhtaIhara/<案件名>`) が作られる
-- ローカルに clone されて `origin` が派生 repo を指す
-- テンプレ起源の commit history が引き継がれる (GitHub 側で「generated from template」バッジが付く)
+## Phase 進行
 
-### Step 3. `/init` を実行 (公式 BP 推奨)
+| Phase | 状態 | 内容 |
+|---|---|---|
+| Phase 1 (bootstrap) | 🔵 in-progress | 骨格立ち上げ + .claude/ 設定 + dir skeleton + 初期 design.md |
+| Phase 2 (中身充填) | ⏳ 未着手 | 公式 source URL 収集 → sources.yml → 初回 sync snapshot |
+| Phase 3 (実 work) | ⏳ 未着手 | Warby Parker 着弾後 + Aura 採択後の use case ops / app 開発 |
 
-Claude Code 上で `/init` を打つと、 Claude が repo 構造を分析し、 CLAUDE.md placeholder の埋め方を提案。 案件 code を追加した後に再実行するとさらに有用。
+## 関連 vendor
 
-### Step 4. CLAUDE.md / README.md を案件用に編集
-
-- 案件 context (プロジェクト概要 / 実行コマンド / Git / GitHub 識別情報) を埋める
-- 「プロダクト名」入力後、 Claude に「`ai-driven-template` を同名で `README.md` / `CHANGELOG.md` に置換」 と頼む
-- **`.github/CODEOWNERS`** の `@YuhtaIhara` を案件 owner (org の team or 個人 account) に書き換え
-- (任意) ローカル dir 名も案件名に rename したい場合は [`.claude/docs/rename-procedure.md`](.claude/docs/rename-procedure.md) を参照 (メモリディレクトリ引越しも同時に必要)
-
-### Step 5. 案件特有の rules / skills / agents / workflows を追加
-
-- 案件特有 AI 規範: `.claude/rules/<topic>.md` (例: `project-context.md`) を追加して `CLAUDE.md` から `@import`
-- 案件特有 skills / agents は `.claude/skills/` / `.claude/agents/` に置く (本テンプレに同梱しない)
-
-→ これで準備完了。 案件開発を開始できます。
-
-## トラブルシュート
-
-### Q. テンプレを「Use this template」せずに、 ローカルフォルダをコピーして使ってしまった
-
-これは推奨運用ではない (remote が `ai-driven-template` を指したままになり、 push で詰まる)。 リカバリー手順:
-
-```bash
-# 1. GitHub に空の派生 repo を作成 (テンプレ機能は使わずシンプル運用)
-gh repo create YuhtaIhara/<案件名> --private --description "<説明>"
-
-# 2. ローカルの remote を派生 repo に向け直す
-cd <ローカル複製フォルダ>
-git remote set-url origin https://github.com/YuhtaIhara/<案件名>.git
-
-# 3. テンプレ追従用 remote を別途追加
-git remote add template https://github.com/YuhtaIhara/ai-driven-template.git
-git remote -v  # 確認
-
-# 4. 初回 push (テンプレ起源 commit がそのまま乗る)
-git push -u origin main
-```
-
-これで通常運用に戻れる。 GitHub 上で「template generated from」バッジは付かないが、 commit history が共通祖先を持つので `template` remote 経由のテンプレ追従は機能する。
-
-> ⚠️ `git push -u origin main` が `rejected (non-fast-forward)` になる場合: GitHub 側で repo 作成時に auto-init された commit がある。 個人 repo の初回限定で `git push --force-with-lease -u origin main` で上書き可能 (慎重に)。
-
-### Q. ローカルフォルダ名も案件名に rename したい
-
-[`.claude/docs/rename-procedure.md`](.claude/docs/rename-procedure.md) に手順あり。 Claude Code セッション中の rename は CWD 破壊リスクがあるので必ずセッション終了後に実施。
-
-### Q. テンプレ側で hook が誤検知して作業が進まない
-
-`.claude/hooks/pre-tool-use.sh` の最新版で改善済 (Bash command の対象文字列のみ判定、 Write/Edit の本文文字列は判定対象から除外)。 古い派生 repo は `template` remote 経由でテンプレ追従して取り込めば解消。
-
-## 利用者向けガイド (派生案件 repo 向け)
-
-### テンプレ更新の追従
-
-本テンプレに修正が入った時、 派生案件 repo に取り込む方法:
-
-- **自動 (推奨)**: 派生 repo の `.github/workflows/template-sync.yml` に [`actions-template-sync`](https://github.com/AndreasAugustin/actions-template-sync) 設置 → 月次で更新 PR が自動 open
-- **手動**: 必要時に下記:
-  ```bash
-  git remote add template https://github.com/YuhtaIhara/ai-driven-template.git
-  git fetch template main
-  git merge template/main --allow-unrelated-histories  # or cherry-pick <SHA>
-  ```
-
-### フィードバック / 改善提案
-
-GitHub Issues タブから。
-
-## 正本配置
-
-| 領域 | 正本 |
-|------|------|
-| 案件 context 入力ハブ | `CLAUDE.md` |
-| AI 規範 (会社基準) | `.claude/rules/` |
-| Lifecycle 自動化 (machine-level ガード) | `.claude/hooks/` (本体) + `.claude/settings.json` (登録) |
-| 共有 permissions | `.claude/settings.json` |
-| Secret scan (CI) | `.github/workflows/secret-scan.yml` |
-
-## 個人ローカル設定 (gitignore)
-
-- `CLAUDE.local.example.md` → `CLAUDE.local.md` (個人 URL / メモ、 commit しない)
-- `.claude/settings.local.example.json` → `.claude/settings.local.json` (個人 `env` / `model` / `statusLine`。 `permissions` / `hooks` は書かない)
+- **`~/work/even/`** = Even Realities (G2 + R1)。 哲学を応援 + 継続活用 stance。 `even-memory-bridge` (frozen) + `even-conversate-ops` (active) の 2 repo
+- **`~/work/google/`** = 本 repo を含む Google XR bucket。 all-in stance
 
 ## 環境前提
 
-- bash 実行環境 (Git Bash / WSL / macOS / Linux 標準)
+- macOS (zsh)
 - [Claude Code CLI](https://claude.com/product/claude-code)
-- `gh` CLI (initial push 時に必要)
+- `gh` CLI (per-command token override で `YuhtaIhara` account 操作)
+- (Phase 2 以降) `jq` / `curl` / `pandoc` / `poppler` 等は even-conversate-ops から流用
+
+## 開発しないと判断したこと (anti-scope)
+
+- **Even との統合 / 移行**: 別 vendor、 use case 排他 (両 glasses 同時着用不可)、 統合の ROI 低い
+- **業界全 vendor の横断比較**: Meta Quest / Samsung Galaxy XR 等は対象外、 Google bucket に絞る (Samsung も Android XR エコシステム上だが、 user の購買対象は Warby Parker)
+- **複数 preset / 切替 ops** (Even から移植しない): Even の v2 preset 設計は Conversate 特化、 Warby Parker / Aura はそもそも仕様未確定、 Phase 3 で実機検証後に判断
