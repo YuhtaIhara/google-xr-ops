@@ -85,6 +85,8 @@ form-structure-2026.md Page 2「Previous development experience」(必須・長�
 
 **English (form 提出用):**
 
+> **Task 8 note:** これらは alternate phrasings。 personal-readiness.md 結果に応じて 1 つだけ採用、 もう 1 つは削除。
+
 Portfolio: github.com/YuhtaIhara `[TBD: note whether pinned repos are organized; add any public production app URLs here if available]`
 
 `[TBD: If no public production app: "Solo indie portfolio on GitHub. No published production app on Google Play to date — Spice Sutra is the first Play-targeted release."]`
@@ -237,7 +239,7 @@ form-structure-2026.md Page 3「Development progress」(必須・0-10 scale)、 
 
 - ☑ **Global**
 
-Indian home cooking is practiced across a broad diaspora — South Asia, North America, the UK, the Middle East, Southeast Asia, and beyond. Restricting to JAPAC would undercut the app's natural audience. Global is the appropriate selection for a vertically focused cooking app with a globally distributed user base.
+Indian home cooking is practiced across a broad diaspora — the broader Indian diaspora across eligible markets (US, UK, EU, Japan), the Middle East, Southeast Asia, and beyond. Restricting to JAPAC would undercut the app's natural audience. Global is the appropriate selection for a vertically focused cooking app with a globally distributed user base.
 
 **日本語 reference:**
 
@@ -297,7 +299,7 @@ Selected: ☑ **No grant required**
 
 The MVP scope — five Indian recipe templates with hybrid timer and periodic camera-based Gemini vision checks — can be self-funded. Estimated Gemini API cost for development and initial production use is in the range of 50,000–150,000 JPY per year for a solo developer running personal usage volumes. This is well within personal budget for an indie project.
 
-We are applying for hardware kit access and technical resources. Those are the inputs that cannot be replicated independently: early access to Display & Audio glasses hardware before consumer release, and direct technical support during SDK integration. The grant funding is not necessary to reach the Play Store milestone.
+I am applying for hardware kit access and technical resources. Those are the inputs that cannot be replicated independently: early access to Display & Audio glasses hardware before consumer release, and direct technical support during SDK integration. The grant funding is not necessary to reach the Play Store milestone.
 
 **日本語 reference:**
 
