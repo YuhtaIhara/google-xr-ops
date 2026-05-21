@@ -29,7 +29,7 @@
 
 | Q | 必須 | 形式 | 選択肢 / メモ |
 |---|---|---|---|
-| Company Name | ✅ | 短文 | indie でも入力必須。 「delight-x.co.jp」 / 「YuhtaIhara (Individual)」 等 user 判断 |
+| Company Name | ✅ | 短文 | 個人 indie でも入力必須。 申請主体名 (法人名でなくても OK)。 → 確定: `Yuhta Ihara` |
 | Company website | — | 短文 | — |
 | Primary Contact Name | ✅ | 短文 | — |
 | Primary Contact Email | ✅ | 短文 | `iharayuhta@gmail.com` 想定 |
@@ -120,7 +120,7 @@
 
 - spec 推定無し
 - indie でも Company Name / website / region / country / address 全て必須
-- 「delight-x.co.jp」 と「個人 indie (YuhtaIhara)」 どちらで申請するか **次の判断ポイント** (現状未確定、 [[project-spice-sutra-2026-05-21]] memory の personal-readiness work で確定)
+- 申請主体は **個人 (Individual)** で確定 (会社案件ではない、 開業届なし、 副業申告なし)。 Company Name = `Yuhta Ihara`
 
 ---
 

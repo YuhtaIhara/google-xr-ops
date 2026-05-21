@@ -296,12 +296,12 @@ form が radio / checkbox / 自由記述 のどれかで pivot:
 
 > 注: 個人情報項目は `personal-readiness.md` (Task 4) で確定後、 本 doc に転記する。
 > 現状プレースホルダ:
-> - Team size: Solo indie developer (YuhtaIhara / delight-x.co.jp)
-> - Prior XR experience: EVEN Realities G2 daily user since [TBD]
-> - Prior Android experience: [TBD]
-> - Open source / portfolio: https://github.com/YuhtaIhara ([TBD: pinned 整備])
+> - Team size: Solo indie developer (YuhtaIhara、 個人 indie、 開業届なし)
+> - Prior XR experience: EVEN Realities G2 daily user since 2026-03 (約 2-3 ヶ月)、 主に Conversate
+> - Prior Android experience: Kotlin / Android 触れて 1 年未満、 採択後 9 ヶ月 window で習得 + Spice Sutra MVP 構築
+> - Open source / portfolio: https://github.com/YuhtaIhara (pinned: google-xr-ops + ai-driven-template + sharepoint-rag-azure + sharepoint-rag-lite + (任意) even-memory-bridge)
 > - Domain expertise: Daily home cook of Indian / spice-based cuisine (dogfood guarantee)
-> - Concept validation: Wet-hand recipe access — personal pain validated for years on G2
+> - Concept validation: Wet-hand recipe access — personal pain validated for 2-3 months on G2 (HUD only, no camera)
 ```
 
 - [ ] **Step 7: Commit**

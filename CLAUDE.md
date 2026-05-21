@@ -11,7 +11,7 @@
 - 関連 vendor wrapper:
   - `~/work/google/` (本 repo の親、 Google bucket)
   - `~/work/even/` (Even bucket、 別 vendor `even-memory-bridge` / `even-conversate-ops`)
-- 主要関係者: y.ihara@delight-x.co.jp (個人利用、 社外公開予定なし)
+- 主要関係者: YuhtaIhara (`iharayuhta@gmail.com`、 個人 indie、 会社案件ではない)
 
 ## Phase 状況
 
