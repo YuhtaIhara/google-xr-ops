@@ -1,19 +1,65 @@
-# Google XR 公式情報源 registry (Phase 1 = 空、 Phase 2 で URL 確定 + 充填)
-#
-# even-conversate-ops/knowledge/even-official/sources.yml と同 schema:
-#   - id: <kebab-case slug>
-#     url: <canonical URL>
-#     priority: 1=◎ (sync 必須) / 2=◯ (補助) / 3=△ (参考)
-#     fetch_cadence: weekly / monthly / on-demand
-#     fetch_method: zendesk-api / itunes-lookup-api / curl+textutil / git-clone / WebFetch
-#     snapshot_file: snapshots/ 配下の filename
-#     note: 何を取るか / 制約
+# knowledge/google-xr-official/sources.yml
+sources:
+  - id: catalyst-landing
+    url: https://developer.android.com/develop/xr/catalyst
+    priority: 1
+    fetch_cadence: weekly
+    fetch_method: webfetch
+    snapshot_file: snapshots/catalyst-landing.md
+    note: 応募締切 / 配送地域 / 評価軸 (Vertical/Readiness/Articulation)
 
-sources: []
+  - id: catalyst-blog-2026-05
+    url: https://android-developers.googleblog.com/2026/05/apply-android-xr-developer-catalyst.html
+    priority: 1
+    fetch_cadence: once
+    fetch_method: webfetch
+    snapshot_file: snapshots/catalyst-blog-2026-05.md
+    note: program 発表 blog、 提供物 (HW + grant + mentoring) の一次出典
 
-# Phase 2 で着手:
-# - Android XR 公式 docs (developers.google.com)
-# - Project Aura Developer Catalyst Program (Google for Developers / blog)
-# - Warby Parker Intelligent Eyewear product page (Cloudflare bot block 確認済、 UA + 別 method 必要)
-# - XREAL Aura HW kit developer site
-# - 関連 GitHub repo (Android XR sample / Aura SDK 等、 公式 org あれば clone)
+  - id: jetpack-xr-dp4
+    url: https://android-developers.googleblog.com/2026/05/android-xr-sdk-developer-preview-4-updates.html
+    priority: 1
+    fetch_cadence: weekly
+    fetch_method: webfetch
+    snapshot_file: snapshots/jetpack-xr-dp4.md
+    note: SDK 最新版 (Compose Glimmer / Projected API / SpatialGltfModel 等)
+
+  - id: android-xr-io-2026
+    url: https://blog.google/products-and-platforms/platforms/android/android-xr-io-2026/
+    priority: 1
+    fetch_cadence: once
+    fetch_method: webfetch
+    snapshot_file: snapshots/android-xr-io-2026.md
+    note: I/O 2026 二日目発表まとめ
+
+  - id: xreal-project-aura
+    url: https://9to5google.com/2026/05/19/xreal-project-aura-android-xr-developers-2026-launch/
+    priority: 2
+    fetch_cadence: once
+    fetch_method: webfetch
+    snapshot_file: snapshots/xreal-project-aura.md
+    note: Aura HW kit 仕様 (OLED 70°FOV / 有線 / glass passthrough / DisplayPort)
+
+  - id: warby-parker-intelligent-eyewear
+    url: https://www.warbyparker.com/intelligent-eyewear
+    priority: 2
+    fetch_cadence: monthly
+    fetch_method: curl-with-ua  # WebFetch 403 確認済
+    snapshot_file: snapshots/warby-parker.md
+    note: consumer 側端末、 Cloudflare bot block 注意
+
+  - id: roadtovr-android-xr-program
+    url: https://www.roadtovr.com/google-android-xr-developer-program-free-ar-glasses/
+    priority: 3
+    fetch_cadence: once
+    fetch_method: webfetch
+    snapshot_file: snapshots/roadtovr-android-xr-program.md
+    note: 海外 XR メディアの program 解説
+
+  - id: moguravr-catalyst
+    url: https://www.moguravr.com/android-xr-developer-catalyst/
+    priority: 3
+    fetch_cadence: once
+    fetch_method: webfetch
+    snapshot_file: snapshots/moguravr-catalyst.md
+    note: 日本語 source、 応募締切 / 配送地域の和訳確認用
