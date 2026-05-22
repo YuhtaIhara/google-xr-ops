@@ -244,7 +244,7 @@ form-structure-2026.md Page 3「Development progress」(必須・0-10 scale)、 
 
 - ☑ **Global**
 
-Indian home cooking is practiced across a broad diaspora — the broader Indian diaspora across eligible markets (US, UK, EU, Japan), the Middle East, Southeast Asia, and beyond. Restricting to JAPAC would undercut the app's natural audience. Global is the appropriate selection for a vertically focused cooking app with a globally distributed user base.
+Indian home cooking is practiced across a wide diaspora — eligible markets (US, UK, EU, Japan), the Middle East, Southeast Asia, and beyond. Restricting to JAPAC would undercut the app's natural audience. Global is the appropriate selection for a vertically focused cooking app with a globally distributed user base.
 
 **日本語 reference:**
 
