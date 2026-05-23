@@ -106,15 +106,14 @@ This combination — camera-based recipe capture, parallel-execution planning, a
 
 ### Upload Supporting Files (max 5 / 100 MB each)
 
-Up to 5 files planned for attachment:
+Attachment plan (4 files、 max 5 / 100 MB each):
 
 1. `spice-sutra-design.pdf` — Full design specification (architecture, data flow, component boundaries, error handling, test strategy, application narrative). 11 sections.
 2. `spice-sutra-catalyst-application.pdf` — Implementation plan (10 tasks from pitch outline through PoC through final submission). Demonstrates execution readiness beyond the idea stage.
-3. `spice-sutra-poc-demo.mp4` — Screen recording of mock HUD running on DP4 emulator (Compose Glimmer, parallel timeline display). Available after Task 6 completion.
-4. `spice-sutra-poc-hud-screenshots.pdf` — Static screenshots of HUD layout (5-lane timeline, step card, warning toast) on DP4 emulator. Available after Task 6 completion.
-5. `spice-sutra-architecture.png` — Architecture diagram (optional; exported from spec § 4).
+3. `hud-overview.png` — DP4 emulator screenshot of the Compose Glimmer 3-zone mock HUD running on Android XR Headset (Google Play XR API 34, 2560×2558, XR environment with floating panel). Completed 2026-05-23.
+4. `spice-sutra-architecture.png` — Architecture diagram (optional; exported from spec § 4).
 
-> Note: Files 3 and 4 depend on Task 6 (PoC) completion before submission date. Prepare by 2026-06-28 at latest.
+> Note: PDF 化 (files 1, 2) は提出 24-48h 前 (T9、 2026-06-28〜29) に pandoc で実施。 file 3 (hud-overview.png) は実機完成済。
 
 ### Category * (multi-select)
 
@@ -133,9 +132,9 @@ N/A — new development. Spice Sutra is not a port or adaptation of an existing 
 
 ### Development Progress * (0-10)
 
-1
+2
 
-(Re-evaluate at submission time: if Task 6 PoC is complete, bump to 2. Current state: design specification complete — architecture, data flow, component boundaries, error handling, test strategy. Implementation not yet started. No code committed.)
+(Design specification complete — architecture, data flow, component boundaries, error handling, test strategy. PoC complete on DP4: Compose Glimmer 3-zone mock HUD (parallel timeline / next step card / warning toast) verified on Android XR Headset emulator (Google Play XR API 34, 2560×2558). See `poc-screenshots/hud-overview.png` + `poc-notes.md`. Backend integration (Gemini multimodal, vision watcher, timeline DAG) starts after acceptance.)
 
 ### Target Launch Regions * (multi-select)
 
@@ -206,7 +205,7 @@ pandoc docs/superpowers/plans/2026-05-21-spice-sutra-catalyst-application.md -o 
 - [ ] AI 主体表現がない (grep "AI 駆動\|Claude が\|AI-assisted" — ゼロ確認)
 - [ ] portfolio URL が動く (https://github.com/YuhtaIhara 訪問: `google-xr-ops` + `ai-driven-template` + `sharepoint-rag-azure` + `sharepoint-rag-lite` が PUBLIC 化済であること — Task 5 完了確認)
 - [ ] 添付ファイルパス確認 (PDF 2 本は提出 24h 前、 動画 / screenshot は Task 6 完了後に準備)
-- [ ] Development progress を提出時点で再評価 (Task 6 完了 → 2 に bump)
+- [x] Development progress: Task 6 PoC 完了で 2 に bump 済 (2026-05-23)
 - [ ] 提出 account が iharayuhta@gmail.com であること (form を開く Google account を確認)
 - [ ] 締切: 2026-06-30 23:59 PDT (= JST 2026-07-01 15:59) に余裕を持って提出 (目標: 2026-06-29 中)
 
