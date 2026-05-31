@@ -124,8 +124,77 @@
 
 ---
 
+---
+
+## Sotto 適用時の項目別整合 (2026-05-23 追記、 Sotto pivot 反映)
+
+> 応募 form 自体は同一 (2026-05-21 確認時点)、 本 section は Spice Sutra → Sotto pivot 後に「同じ form の各項目で値がどう変わるか」 を 1 対 1 で照合する正本。 spec § 9 の Sotto narrative と form 各項目の対応はここを base とする。
+
+### form 自体の変更検知 (TODO: user 確認)
+
+- [ ] **user 実施**: 公式 form (https://docs.google.com/forms/d/e/1FAIpQLSesZlBGg010S0K9Xm5ZvxTt2WMzHGnKtBUYEhBrzd0_uwmHEA/viewform) を `iharayuhta@gmail.com` で再 open、 2026-05-21 確認時点から構造変更が無いことを確認 (Q 追加 / 文字数制限 / 選択肢追加 / 締切 / acknowledgement 文言)。 5 分作業
+- 変更検知時: 本 section に「2026-MM-DD 差分」 subsection を追記、 spec § 9 + form-final-draft-sotto.md を update
+- 変更なし時: 本 section の TODO を完了 ☑ に変更
+
+### Page 1 (Company / Contact / Region) — Sotto 用変更なし
+
+Spice Sutra と同じ値:
+- Company Name: `Yuhta Ihara`
+- Job title: `Indie Developer`
+- Region: APAC / Country: Japan
+- Primary Contact: Yuhta Ihara / iharayuhta@gmail.com
+
+### Page 2 (XR Development Journey) — narrative 全面書換
+
+| Q | Spice Sutra 値 | Sotto 値 | 差分理由 |
+|---|---|---|---|
+| Previous development experience (long-form) | Indian cooking domain expertise + G2 wet-hand HUD validation | even-memory-bridge dogfood 5 ヶ月 + engineer context switching の daily 痛み + Kotlin 1 年未満 (採択後習得) | domain pivot (cooking → engineer)、 concept validation 軸を G2 personal HUD experiment → memory-bridge frozen PJ に置換 |
+| Existing apps (links) | Spice Sutra design 含む portfolio | 同じ URL set、 narrative の重心が `even-memory-bridge` (Sotto の前身) に移動 | pin 6 個は同一、 文中の言及順序のみ変更 |
+| Tech stack | Android with Compose | Android with Compose | 同じ |
+| Unity-specific fields | N/A | N/A | 同じ |
+| Opt-in dev updates | Yes | Yes | 同じ |
+
+### Page 3 (App overview) — Category + Elevator pitch + PoC が全面書換
+
+| Q | Spice Sutra 値 | Sotto 値 | 差分理由 |
+|---|---|---|---|
+| Elevator pitch | "Indian home cooking demands precision on two axes..." (cooking conductor narrative) | "Engineers and tech founders carry too much technical context..." (memory extension narrative) | concept 完全 pivot |
+| Upload supporting files | spice-sutra-design.pdf / spice-sutra-catalyst-application.pdf / hud-overview.png (cooking) / architecture.png | sotto-design.pdf / sotto-catalyst-application.pdf / sotto-even-component-reuse.pdf / sotto-hud-overview.png (engineer) / sotto-architecture.png (任意) | 添付 5 枠目に even-component-reuse.pdf 追加 (流用率 60-70% を可視化) |
+| Category (multi-select) | Productivity + Health & Wellness + Education | **Productivity + Enterprise + Education** | Health & Wellness は cooking 専用、 engineer / 経営者 / 商談 context は Enterprise 軸 |
+| Existing port link | N/A (新規) | N/A (新規) | 同じ (Sotto は新規開発、 ただし memory-bridge frozen を「概念的 prior art」 として narrative に組込み) |
+| Development progress (0-10) | 2 (design + cooking PoC 完了) | **2** (design + Even RAG 完成品所持 + engineer PoC 完了) | 同じ score、 根拠が cooking PoC → engineer PoC + Even repo 完成品 (memory-bridge RAG pipeline) に変化 |
+| Target Launch Regions | Global | Global | 同じ (engineer 需要は世界中) |
+| Estimated launch date | 2027-04-30 | 2027-04-30 | 同じ (9 ヶ月 window) |
+| Hardware form factor | Display & Audio glasses | Display & Audio glasses | 同じ (cooking の hands-free 必要性 → engineer の社交装着適合性、 結論は同じ form factor) |
+
+### Page 4 (Grant + Acknowledgements) — 値変更なし、 narrative 強化
+
+| Q | Spice Sutra 値 | Sotto 値 | 差分理由 |
+|---|---|---|---|
+| Grant amount | No grant required | No grant required | 同じ |
+| Grant articulation narrative | Gemini cost 年 5-15 万円 自費賄える | STT + Gemini + Vector Search cost 年 10-25 万円 + **Even repo 流用率 60-70%** で開発工数を 3-4 倍 leverage | cost 試算微増 (STT + Vector Search 追加分)、 流用率の説得力で No grant の自信を強化 |
+| Acknowledgements (2 checkbox) | 両方 ☑ | 両方 ☑ | 同じ |
+
+### Sotto narrative の key 強み (Spice Sutra 比較)
+
+1. **dogfood guarantee がより強固**: cooking は user が「daily 体感」 と書いたが engineer context switching は user 自身が中堅 indie として **daily に直接苦しんでいる**、 説得力が 1 段違う
+2. **concept validation が PJ-backed**: G2 personal HUD experiment (Sutra の subjective evidence) → even-memory-bridge frozen PJ + 5 ヶ月 dogfood 実績 (Sotto の portfolio-backed evidence)
+3. **Even repo 流用率 60-70%** = indie 1 人 9 ヶ月 で Play 公開する**現実性の最大根拠**、 No grant required の自信を後押し
+4. **判定者刺さりやすい**: cooking は印象的だが reviewer が engineer = Sotto の use case は reviewer 自身が「私も欲しい」 と直感、 採用確度上
+5. **privacy 先回り強化**: brand 名 Sotto (sotto voce) が「ささやく / 押し付けない」 を 1 word で示唆、 mic 録音の社会受容懸念に対する 先回り response
+
+### Sotto narrative の risk (Sutra 比較)
+
+1. **印象残り度**: 「日本 indie のスパイスカレー」 ほど印象的でない可能性。 mitigation: even-memory-bridge frozen PJ + 5 ヶ月 dogfood + Even repo 流用率の組合せで「実装力の indie」 印象を強化、 印象パワーは「実装証拠」 軸で勝負
+2. **市場 crowded**: meeting AI (Otter / Fireflies / Granola 等) と並べると一見「また meeting AI?」。 mitigation: spec § 2 の差別化表 (real-time visual HUD × 個人 corpus × engineer 特化 の 3 軸交差) を pitch elevator で 2-3 行で叩き込む
+3. **privacy 懸念で reviewer hesitate**: mic 録音は社会受容懸念高い領域。 mitigation: pitch + spec § 7 で privacy design (ephemeral / masking / user-only display) を先回り、 brand 名 Sotto で安心感 signal
+
+---
+
 ## 関連
 
-- 設計 spec: `../../docs/superpowers/specs/2026-05-21-spice-sutra-design.md` (§ 9 改訂対象)
-- 応募 plan: `../../docs/superpowers/plans/2026-05-21-spice-sutra-catalyst-application.md`
-- 公式 source: `../../knowledge/google-xr-official/sources.yml` (catalyst-landing / catalyst-blog-2026-05)
+- 設計 spec: `../../docs/superpowers/specs/2026-05-23-sotto-design.md` (current、 § 9 と本 section が 1 対 1 で整合)
+- 前身 spec (deprecated): `../../docs/superpowers/specs/2026-05-21-spice-sutra-design.md`
+- Even repo 流用 component リスト: `../../docs/superpowers/specs/2026-05-23-sotto-even-component-reuse.md`
+- 応募 plan: `../../docs/superpowers/plans/2026-05-23-sotto-catalyst-application.md`
+- 公式 source: `../../knowledge/google-xr-official/sources.yml` (catalyst-landing / catalyst-blog-2026-05 / jetpack-xr-dp4)
