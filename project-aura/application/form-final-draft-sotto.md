@@ -54,7 +54,7 @@ Solo indie developer based in Japan. I build and ship software independently —
 
 My hands-on time with Kotlin and Android-adjacent technologies is under a year. I am applying with the explicit plan to use the nine-month post-acceptance window to ramp up on Jetpack XR SDK (DP4 → Beta) and Gemini multimodal APIs while porting and extending my prior conversational HUD work into a production Android XR release.
 
-Two factors are the leverage I bring against limited language experience. First, the depth of design work already completed (see attached spec and plan). Second, the maturity of the reusable components from my prior project: approximately 60–70% of the MVP backbone — RAG pipeline, masking layer, intent classification, HUD state machine — already exists as battle-tested Python and TypeScript code (see attached component reuse document).
+Two factors are the leverage I bring against limited language experience. First, the depth of design work already completed (see attached spec). Second, the maturity of the reusable components from my prior project: approximately 60–70% of the MVP backbone — RAG pipeline, masking layer, intent classification, HUD state machine — already exists as battle-tested Python and TypeScript code (see attached component reuse document).
 
 On the XR side: I have been a daily user of EVEN Realities G2 display glasses since March 2026 — roughly two to three months of hands-on time with a heads-up display in real-world contexts, primarily Conversate (G2's flagship conversational HUD use case). Prior to that, I built and dogfooded `even-memory-bridge` (now frozen, public on GitHub), a personal XR HUD + life-log + retrieval experiment on the same G2 hardware, for approximately five months. That project taught me where audio-only HUDs work and where they reach physical limits — the G2 cannot render code snippets, decision logs as visual lists, or architecture diagrams. Sotto on Aura is the natural progression: take the engineer-specific retrieval pipeline I already built, and render it as visual context the G2 hardware never could.
 
@@ -118,10 +118,9 @@ This combination does not exist on any XR platform today. The MVP scope reuses a
 (form 提出時に下記 Attachments セクションの 5 ファイルを user が選択 upload)
 
 1. `sotto-design.pdf`
-2. `sotto-catalyst-application.pdf`
-3. `sotto-even-component-reuse.pdf`
-4. `sotto-hud-overview.png`
-5. (optional) `sotto-architecture.png`
+2. `sotto-even-component-reuse.pdf`
+3. `sotto-hud-overview.png`
+4. (optional) `sotto-architecture.png`
 
 ### Category * (multi-select)
 
@@ -137,7 +136,7 @@ N/A — new development. Sotto is not a port of an existing app. However, the ar
 
 **2**
 
-Design specification complete — architecture, data flow, component boundaries, privacy design, error handling, test strategy. Mock HUD PoC complete on DP4: Compose Glimmer three-zone engineer-specific layout (summary list / inline code / architecture diagram) verified on Android XR Headset emulator (Google Play XR API 34, 2560×2558). Reusable components from prior project `even-memory-bridge` (frozen public repository) already exist as working Python and TypeScript code: hybrid RAG pipeline with cosine 0.7 + BM25 + LLM rerank, masking layer, embedding/chunking, intent classification. See `poc-screenshots/sotto-hud-overview.png`, `poc-notes.md`, and the attached component reuse document. Kotlin porting and Aura SDK integration begin after acceptance.
+Design specification complete — architecture, data flow, component boundaries, privacy design, error handling, test strategy. Mock HUD PoC complete on DP4: Compose Glimmer three-zone engineer-specific layout (summary list / inline code / architecture diagram) verified on Android XR Headset emulator (Google Play XR API 34, 2560×2558). Reusable components from prior project `even-memory-bridge` (frozen public repository) already exist as working Python and TypeScript code: hybrid RAG pipeline with cosine 0.7 + BM25 + LLM rerank, masking layer, embedding/chunking, intent classification. See `poc-screenshots/sotto-hud-overview.png`, `poc-notes-sotto.md`, and the attached component reuse document. Kotlin porting and Aura SDK integration begin after acceptance.
 
 ### Target Launch Regions * (multi-select)
 
@@ -149,7 +148,7 @@ Engineers and tech founders working with technical context (design docs, code, d
 
 **2027-04-30**
 
-Nine-month timeline from hardware kit receipt (estimated 2026-08) through DP4 prototype, Even component porting (Python/TypeScript → Kotlin), intent classification + retrieval pipeline integration, real-device alpha, beta dogfood with two friend engineers, and Google Play submission. Detailed milestone schedule is in the attached plan document.
+Nine-month timeline from hardware kit receipt (estimated 2026-08) through DP4 prototype, Even component porting (Python/TypeScript → Kotlin), intent classification + retrieval pipeline integration, real-device alpha, beta dogfood with two friend engineers, and Google Play submission.
 
 ### Hardware Form Factor *
 
@@ -189,10 +188,11 @@ I am applying for hardware kit access and technical resources. Those are the inp
 | # | ファイル名 | 内容 | 準備状況 |
 |---|---|---|---|
 | 1 | `sotto-design.pdf` | 設計 spec PDF (`docs/superpowers/specs/2026-05-23-sotto-design.md` から pandoc 生成、 11 section / ~590 行) | 要 PDF 化 (T9 提出 24-48h 前 pandoc 実行) |
-| 2 | `sotto-catalyst-application.pdf` | 実装 plan PDF (`docs/superpowers/plans/2026-05-23-sotto-catalyst-application.md`、 T1-T10) | 要 PDF 化 (T9) |
-| 3 | `sotto-even-component-reuse.pdf` | Even repo 流用 component リスト PDF (`docs/superpowers/specs/2026-05-23-sotto-even-component-reuse.md`、 5 要素マトリックス + file-level inventory) | 要 PDF 化 (T9) |
-| 4 | `sotto-hud-overview.png` | DP4 emulator screenshot (Compose Glimmer 3 zone: summary list / inline code / architecture diagram) | T6 完了後 (現状 Spice Sutra T6 PoC screenshot のみ、 Sotto 用に書換要) |
-| 5 | (optional) `sotto-architecture.png` | spec § 4 architecture diagram 画像 export | 任意、 T9 で時間に余裕あれば |
+| 2 | `sotto-even-component-reuse.pdf` | Even repo 流用 component リスト PDF (`docs/superpowers/specs/2026-05-23-sotto-even-component-reuse.md`、 5 要素マトリックス + file-level inventory) | 要 PDF 化 (T9) |
+| 3 | `sotto-hud-overview.png` | DP4 emulator screenshot (Compose Glimmer 3 zone: summary list / inline code / architecture diagram) | T6 手動 (手順は `poc-setup-guide-sotto.md` で確立済、 emulator 実行 + 撮影が残) |
+| 4 | (optional) `sotto-architecture.png` | spec § 4 architecture diagram 画像 export | 任意、 T9 で時間に余裕あれば |
+
+> 内部実装 plan (`docs/superpowers/plans/2026-05-23-sotto-catalyst-application.md`) は**意図的に添付しない** (T1-T10 は応募作業の内部 PM task であり、 reviewer-facing 価値が薄く、 内部過程を露出するデメリットが上回る判断。 2026-06-04)。
 
 PDF 化作業: T9 (提出 24-48h 前) で pandoc 実行。 PNG: T6 (PoC 改修) 完了後。
 
@@ -209,8 +209,8 @@ PDF 内 AI 痕跡 chk: 「Claude」 「AI 駆動」 等の主体表現が混入�
 - [ ] AI 主体表現がない (grep `AI 駆動\|Claude が\|AI-assisted\|AI-driven` → ゼロ確認)
 - [ ] portfolio URL 動作 (https://github.com/YuhtaIhara)、 pinned 5 個 + profile README が live
 - [ ] 添付ファイル PDF / PNG 準備
-  - sotto-design.pdf / sotto-catalyst-application.pdf / sotto-even-component-reuse.pdf: T9 で pandoc 実行
-  - sotto-hud-overview.png: T6 完了済 (Sotto 版 mock HUD screenshot、 現状未着手)
+  - sotto-design.pdf / sotto-even-component-reuse.pdf: T9 で pandoc 実行 (内部 plan は意図的に非添付)
+  - sotto-hud-overview.png: T6 手動 (`poc-setup-guide-sotto.md` で手順確立済、 emulator 実行 + 撮影が残)
 - [ ] Spice Sutra 残骸ゼロ確認 (form 内で `spice\|sutra\|cooking\|recipe\|curry\|tempering\|cumin\|Indian` 単語 zero 確認、 grep で実行)
 - [ ] 提出 account が `iharayuhta@gmail.com`
 - [ ] T5 manual step 完了 (profile README Sotto 反映 push + before/after screenshot)

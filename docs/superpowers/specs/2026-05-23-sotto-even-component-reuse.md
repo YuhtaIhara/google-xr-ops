@@ -64,7 +64,7 @@
 |---|---|---|---|
 | 3-page layout (clarify / substance / phrasing) | `memory-bridge/src/hud.ts` | 改修要 | layout 概念は流用、 Aura Display & Audio glasses の画面 size に調整、 Compose Glimmer 書き換え |
 | 短文化 + 出典表示 | `memory-bridge/src/hud-formatter.ts` | そのまま | 120-180 char で `file_path › heading_path` 形式の出典表示、 Sotto の summary list 3 行 (60 字) に転用 |
-| Safety-net fallback templates | `conversate-ops/knowledge/phrases/safety-net.yml` | 改修要 | engineer 特化 fallback (「まず 技術スタック / チーム構成 / 決定権者 確認」 等) を新規追加、 cooking / business 系は削除 |
+| Safety-net fallback templates | `conversate-ops/knowledge/phrases/safety-net.yml` | 改修要 | engineer 特化 fallback (「まず 技術スタック / チーム構成 / 決定権者 確認」 等) を新規追加、 汎用会話系 fallback は除外 |
 | 段階的 UX ([処理中…] → 本内容置換) | `memory-bridge/src/hud-state.ts` | そのまま | state machine と transition 設計はそのまま流用 |
 | Inline code display | (新規開発) | 新規 | syntax highlight + 5-10 行 snippet 表示、 Compose の組合せで新規実装 (E2 phase) |
 | Architecture diagram thumbnail | (新規開発) | 新規 | 既存 design doc 内の図を thumbnail 化 + tap で拡大、 新規実装 (E2 phase) |
