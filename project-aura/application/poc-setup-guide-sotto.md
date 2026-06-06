@@ -37,6 +37,8 @@
 
 ### 1-1. 現在の Windows 機の状態 (2026-06-03 確認済)
 
+> 2026-06-06 再確認: 下記状態に変化なし (空き容量 56 GB / RAM 16 GB も要件内)。
+
 - **Android Studio: 未インストール** → Step A で install 要
 - **Android SDK: 一部のみ存在** (`%LOCALAPPDATA%\Android\Sdk` に `android-36` / `android-36.1` platform + build-tools + platform-tools)
 - **emulator package: 無し** → Step A-3 で install 要
@@ -56,6 +58,7 @@
 4. 起動 (初回は SmartScreen 警告が出る場合あり →「詳細情報」→「実行」)
 
 > **バージョン要件**: Android XR Emulator のサポートは Studio **Jellyfish (2023.3.1)** 以降。 2026 年時点の最新 stable で問題ない。 確認は起動後 `Help > About`。
+> sample repo README は最新 **Canary** 推奨 (旧 Mac 環境も Panda Canary だった)。 stable で sync エラーが出る場合のみ Canary (https://developer.android.com/studio/preview) に切替。
 
 ### A-2. 初回セットアップウィザード
 
@@ -83,17 +86,18 @@
 
 ## 3. Step B: Jetpack XR SDK DP4 公式 sample の取得
 
-### B-1. 公式 blog から sample URL を取得
+### B-1. sample repo URL (2026-06-06 確定済)
 
-DP4 公式 sample は以下 blog post に掲載:
+公式 sample は **Hello Android XR** (確認経路: DP4 blog → developer.android.com/develop/xr/samples):
 
 ```
-https://android-developers.googleblog.com/2026/05/android-xr-sdk-developer-preview-4-updates.html
+https://github.com/android/xr-samples
 ```
 
-1. 上記 URL を開く
-2. `Ctrl+F` で「sample」「GitHub」「github.com/android/xr」を検索
-3. sample repo の GitHub URL を見つける (想定: `https://github.com/android/xr-samples` 等)
+- 単一 app module 構成 (`app/`)、 Jetpack XR SDK + Compose 使用
+- package: `com.example.helloandroidxr`
+- entry: `app/src/main/java/com/example/helloandroidxr/MainActivity.kt` (`ComponentActivity` 継承、 setContent は `HelloAndroidXRTheme { HelloAndroidXRApp() }`)
+- Theme composable: `HelloAndroidXRTheme`
 
 ### B-2. scratch ディレクトリに clone
 
@@ -105,8 +109,7 @@ PowerShell で実行:
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\Documents\work\google\sotto-poc"
 Set-Location "$env:USERPROFILE\Documents\work\google\sotto-poc"
 
-# blog で取得した URL で clone (実 URL は blog 確認)
-git clone <blog-post-で取得した-sample-URL> xr-sample
+git clone https://github.com/android/xr-samples xr-sample
 Set-Location xr-sample
 ```
 
@@ -139,17 +142,17 @@ implementation("androidx.compose.material3:material3")
 
 ### D-1. 新規ファイル作成
 
-1. Project ツリーで `app/src/main/java/` 配下の既存 package ディレクトリを確認 (例: `com/example/xrsample`)
+1. Project ツリーで `app/src/main/java/com/example/helloandroidxr/` を開く
 2. 右クリック → **New → Kotlin Class/File** → ファイル名 `SottoMockHud` → **File** → OK
 
 ### D-2. 以下のコードを丸ごと貼り付け
 
-`SottoMockHud.kt` の内容を全削除し、 以下を **そのままコピペ**。 1 行目 `package` を実際の package 名に書き換える (既存 `.kt` の 1 行目に合わせる)。
+`SottoMockHud.kt` の内容を全削除し、 以下を **そのままコピペ** (package 名は xr-samples 実値で確定済、 書き換え不要)。
 
 > demo シナリオ: 数ヶ月前の自分の commit が code review に上がり「**なぜ audit module に event-sourcing を選んだ?**」と聞かれた瞬間に Sotto が出す HUD。 全 hardcode・backend なし。 設計 spec § 3 (HUD render) / § 5 (HudPresenter 3 zone) に対応。
 
 ```kotlin
-package com.example.sotto  // ← 実際の package 名に変更
+package com.example.helloandroidxr
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -295,12 +298,11 @@ private fun ArchitectureThumbnail() {
 
 ## 6. Step E: MainActivity から SottoMockHud を呼ぶ
 
-sample の `MainActivity.kt` (entry point Activity) の `setContent { }` を以下で置換 (theme クラス名は sample 既存名に合わせる):
+`MainActivity.kt` の `setContent { }` 内は現状 `HelloAndroidXRTheme { HelloAndroidXRApp() }` (2026-06-06 確認)。 これを以下で置換:
 
 ```kotlin
 setContent {
-    // YourSampleTheme は sample 既存の Theme composable 名に合わせる (例: XrSampleTheme)
-    YourSampleTheme {
+    HelloAndroidXRTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
@@ -311,17 +313,16 @@ setContent {
 }
 ```
 
-import 追加 (`com.example.sotto` は実際の package 名に変更):
+import 追加 (`SottoMockHud` は同 package のため import 不要):
 
 ```kotlin
-import com.example.sotto.SottoMockHud
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 ```
 
-> **theme 名**: `ui/theme/Theme.kt` の `@Composable fun XxxTheme(` の `Xxx`。 重複 import は Studio が赤字表示するので削除。
+> 重複 import は Studio が赤字表示するので削除。 clone 後に setContent の中身が上記想定と違う場合も「既存 Theme で `SottoMockHud()` を包む」 方針は同じ。
 
 ---
 
@@ -394,6 +395,10 @@ git status
 ---
 
 ## 11. Troubleshooting
+
+### 「Your device is loading…」 から進まない (iGPU 機)
+
+**2026-06-06 実測**: Iris Xe (iGPU) + RAM 16 GB 機では XR shell scene の描画が完了しない (emulator 警告「GPU vendor not fully supported」 + 推奨 RAM 16384 MiB)。 boot / APK install / activity 起動までは成功するが、 headset / glasses 両 profile・ `-gpu host`・ RAM 増量いずれも scene load 不可。 **dGPU 搭載機で実施すること**。 toolchain 補足: sample は Java 17 toolchain を要求 (Studio 同梱 JBR 21 では不足、 Temurin 17 等を別途 install)。
 
 ### Emulator 起動が遅い・固まる
 - RAM 不足 / acceleration 無効。 Device Manager → AVD 編集 → Advanced で `Emulated Performance: Hardware`。 他アプリを閉じる。 Windows は WHPX (Windows Hypervisor Platform) 有効化が必要な場合あり (`Windows の機能の有効化` で「Windows ハイパーバイザー プラットフォーム」をオン)。

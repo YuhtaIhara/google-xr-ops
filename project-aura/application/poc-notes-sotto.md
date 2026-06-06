@@ -20,7 +20,7 @@ Project Aura Developer Catalyst Program 応募の Developer Readiness 補強。 
 
 ## やったこと
 
-1. 公式 DP4 blog から sample repo を clone (`sotto-poc/xr-sample`、 xr-ops 本 repo には commit しない)
+1. 公式 sample repo `https://github.com/android/xr-samples` (Hello Android XR) を clone (`sotto-poc/xr-sample`、 xr-ops 本 repo には commit しない)
 2. **SottoMockHud composable** を新規 file `SottoMockHud.kt` に追加 (hardcoded、 real logic なし)
 3. `MainActivity` の root composable を sample 既存から `SottoMockHud()` に置換 (最小変更)
 4. (必要なら) `settings.gradle.kts` / `build.gradle.kts` の調整: TODO
