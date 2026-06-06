@@ -136,7 +136,7 @@ N/A — new development. Sotto is not a port of an existing app. However, the ar
 
 **2**
 
-Design specification complete — architecture, data flow, component boundaries, privacy design, error handling, test strategy. Mock HUD PoC complete on DP4: Compose Glimmer three-zone engineer-specific layout (summary list / inline code / architecture diagram) verified on Android XR Headset emulator (Google Play XR API 34, 2560×2558). Reusable components from prior project `even-memory-bridge` (frozen public repository) already exist as working Python and TypeScript code: hybrid RAG pipeline with cosine 0.7 + BM25 + LLM rerank, masking layer, embedding/chunking, intent classification. See `poc-screenshots/sotto-hud-overview.png`, `poc-notes-sotto.md`, and the attached component reuse document. Kotlin porting and Aura SDK integration begin after acceptance.
+Design specification complete — architecture, data flow, component boundaries, privacy design, error handling, test strategy. Mock HUD PoC implemented on the official DP4 sample base: Compose three-zone engineer-specific layout (summary list / inline code / architecture diagram), built and deployed to the Android XR emulator (Google Play XR API 34). Reusable components from prior project `even-memory-bridge` (frozen public repository) already exist as working Python and TypeScript code: hybrid RAG pipeline with cosine 0.7 + BM25 + LLM rerank, masking layer, embedding/chunking, intent classification. See `poc-screenshots/sotto-hud-overview.png`, `poc-notes-sotto.md`, and the attached component reuse document. Kotlin porting and Aura SDK integration begin after acceptance.
 
 ### Target Launch Regions * (multi-select)
 
@@ -189,7 +189,7 @@ I am applying for hardware kit access and technical resources. Those are the inp
 |---|---|---|---|
 | 1 | `sotto-design.pdf` | 設計 spec PDF (`docs/superpowers/specs/2026-05-23-sotto-design.md` から pandoc 生成、 11 section / ~590 行) | 要 PDF 化 (T9 提出 24-48h 前 pandoc 実行) |
 | 2 | `sotto-even-component-reuse.pdf` | Even repo 流用 component リスト PDF (`docs/superpowers/specs/2026-05-23-sotto-even-component-reuse.md`、 5 要素マトリックス + file-level inventory) | 要 PDF 化 (T9) |
-| 3 | `sotto-hud-overview.png` | DP4 emulator screenshot (Compose Glimmer 3 zone: summary list / inline code / architecture diagram) | T6 手動 (手順は `poc-setup-guide-sotto.md` で確立済、 emulator 実行 + 撮影が残) |
+| 3 | `sotto-hud-overview.png` | emulator screenshot (Compose 3 zone: summary list / inline code / architecture diagram) | **要撮影** — この機材 (iGPU) では XR emulator 描画不可 (guide §11)。 dGPU 別機材 or 通常 AVD で 6-15〜22 buffer 内に取得。 撮影環境が確定したら form 本文 (line 139) の文言を再強化 |
 | 4 | (optional) `sotto-architecture.png` | spec § 4 architecture diagram 画像 export | 任意、 T9 で時間に余裕あれば |
 
 > 内部実装 plan (`docs/superpowers/plans/2026-05-23-sotto-catalyst-application.md`) は**意図的に添付しない** (T1-T10 は応募作業の内部 PM task であり、 reviewer-facing 価値が薄く、 内部過程を露出するデメリットが上回る判断。 2026-06-04)。
