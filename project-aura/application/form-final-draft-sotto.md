@@ -194,7 +194,7 @@ I am applying for hardware kit access and technical resources. Those are the inp
 
 > 内部実装 plan (`docs/superpowers/plans/2026-05-23-sotto-catalyst-application.md`) は**意図的に添付しない** (T1-T10 は応募作業の内部 PM task であり、 reviewer-facing 価値が薄く、 内部過程を露出するデメリットが上回る判断。 2026-06-04)。
 
-PDF 化作業: T9 (提出 24-48h 前) で pandoc 実行。
+PDF 化作業: T9 (提出 24-48h 前) で pandoc 実行。 toolchain は 2026-06-07 検証済 (pandoc 3.9 + `--pdf-engine=typst`、 両 doc の試し変換成功。 日本語 glyph は user 目視確認)。
 
 PDF 内 AI 痕跡 chk: 「Claude」 「AI 駆動」 等の主体表現が混入しないことを T9 で grep 確認 (CLAUDE.md project rule)。
 
