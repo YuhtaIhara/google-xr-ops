@@ -27,11 +27,13 @@ pinned public repositories (`github.com/YuhtaIhara`、 Sotto narrative 順):
 
 1. **`even-memory-bridge`** — frozen 前 PJ。 EVEN Realities G2 audio glasses 上の XR HUD + life-log + retrieval 実験。 5 ヶ月 dogfood。 RAG pipeline / embedding / chunking / masking layer / HUD state machine 保有、 Sotto MVP backbone の 60-70% を流用 (添付 `sotto-even-component-reuse.pdf` で file-level inventory 提示)。
 2. **`google-xr-ops`** — 本応募の設計 spec + Catalyst plan + Even 流用 inventory + PoC 成果物 (本 repo)。
-3. **`ai-driven-template`** — workflow baseline starter (`.claude/` 設定 pattern、 solo-maintainable 開発実践の reflection)。
-4. **`sharepoint-rag-azure`** — Azure RAG PoC + 設計 doc + IaC + architecture diagram。
-5. **`sharepoint-rag-lite`** — SharePoint RAG 実装 (pgvector + FastAPI + ACL)。
 
-> Spice Sutra → Sotto pivot で pin 構成自体は不変、 言及順序のみ `even-memory-bridge` を冒頭に移動 (「前 PJ → Sotto への natural progression」 narrative 強化)。
+profile README「Pinned work」section からの追加 link (pin 外、 公開到達可能):
+
+- **`sharepoint-rag-azure`** — Azure RAG PoC + 設計 doc + IaC + architecture diagram (`delight-ihara` org へ redirect、 public 200)。
+- **`sharepoint-rag-lite`** — SharePoint RAG 実装 (pgvector + FastAPI + ACL) (同上)。
+
+> **2026-06-12 同期修正**: pin は 2026-06-07 に user 手動で 2 個構成 (`google-xr-ops` / `even-memory-bridge`) に整理済 (会社 org repo を pin から除去)。 `ai-driven-template` は org transfer + private 化で reviewer 404 のため全 reviewer-facing 文面から削除。 sharepoint-rag 2 つは README link 経由で到達可能なため「README link」 として言及を維持。 旧「pinned 5 個」 表現は form-final-draft-sotto.md / pitch-outline-sotto.md / spec § 9 とともに本日同期済。
 
 ## 3. Domain expertise (Sotto 用、 全面書換)
 

@@ -130,11 +130,20 @@
 
 > 応募 form 自体は同一 (2026-05-21 確認時点)、 本 section は Spice Sutra → Sotto pivot 後に「同じ form の各項目で値がどう変わるか」 を 1 対 1 で照合する正本。 spec § 9 の Sotto narrative と form 各項目の対応はここを base とする。
 
-### form 自体の変更検知 (TODO: user 確認)
+### form 自体の変更検知 (☑ 2026-06-12 実施、 構造変更あり → 下記差分)
 
-- [ ] **user 実施**: 公式 form (https://docs.google.com/forms/d/e/1FAIpQLSesZlBGg010S0K9Xm5ZvxTt2WMzHGnKtBUYEhBrzd0_uwmHEA/viewform) を `iharayuhta@gmail.com` で再 open、 2026-05-21 確認時点から構造変更が無いことを確認 (Q 追加 / 文字数制限 / 選択肢追加 / 締切 / acknowledgement 文言)。 5 分作業
-- 変更検知時: 本 section に「2026-MM-DD 差分」 subsection を追記、 spec § 9 + form-final-draft-sotto.md を update
-- 変更なし時: 本 section の TODO を完了 ☑ に変更
+- [x] 公式 form を `iharayuhta@gmail.com` で再 open し全 page 確認 (2026-06-12、 提出と同時実施)
+- 変更検知 → 「2026-06-12 差分」 subsection に記録 (下記)
+
+### 2026-06-12 差分 (提出時確認、 **構造変更あり**)
+
+1. **新セクション「Glasses use cases & requirements」追加** (旧 Page 3 と Grant page の間)。 最大 5 use case、 use case ごとに 7 問:
+   - 記述 (必須・長文、 例示 3 つ付き) / form factor 適合 (Audio / Display / Both) / launch 優先度 (Required for launch- H1 2026 / Nice to have / Future-looking 2+ years / Dream 4+ years) / 成功計測方法 (任意) / 必要 XR capability (必須 multi-select: Notifications / Audio / Camera access / UI framework / Scene understanding / VPS localization / Spatial Audio / その他) / capability 必要理由 (任意) / 「次の use case を追加?」 (Yes/No 分岐)
+2. **新セクション「Use Cases: Stack Rank activity」追加**: use case #1-5 を 1-5 or N/A で順位付け (必須 grid)
+3. eligibility 文言に **CA (カナダ) 追加** (「US, CA, UK, EU, and Japan」)
+4. 旧 4 page (Company / XR journey / App / Grant+Ack) の項目・選択肢は変更なし
+
+**提出時の対応 (2026-06-12)**: 原稿が無い新セクションは設計 spec の確定内容から英文を新規作成して回答 (UC#1 = core engineer retrieval HUD / UC#2 = expansion 経営者 persona、 rank 1-2 + N/A×3)。 全回答の verbatim 記録は `submission-record-2026-06-12.md` 参照。
 
 ### Page 1 (Company / Contact / Region) — Sotto 用変更なし
 
