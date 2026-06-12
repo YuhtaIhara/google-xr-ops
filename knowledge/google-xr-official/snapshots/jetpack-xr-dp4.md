@@ -4,7 +4,7 @@
 |---|---|
 | source id | jetpack-xr-dp4 |
 | URL | https://android-developers.googleblog.com/2026/05/android-xr-sdk-developer-preview-4-updates.html |
-| fetched | 2026-05-23 |
+| fetched | 2026-05-23 (初回) / 2026-06-12 (再 fetch) |
 | method | WebFetch |
 | 用途 | SDK 最新版の API set 把握、 Sotto Compose Glimmer HUD 実装の base |
 
@@ -54,6 +54,11 @@ Modern, Kotlin-first architecture (legacy Guava/RxJava3 removed)。
 - XR examples: https://developer.android.com/develop/xr/samples
 - XR experiments: https://developer.android.com/develop/xr/experiments
 - Catalyst program: g.co/dev/catalyst
+
+## 2026-06-12 再 fetch (提出後)
+
+- **変更なし**: 記事は静的 (公開 2026-05-19)、 抽出済の API set (Glimmer Stacks/Title Chips / Projected Device Availability / SceneCore / SpatialGltfModel / Geospatial 87+ countries) と一致
+- Beta 移行は引き続き "will soon move to Beta" のまま、 **具体日程の発表なし** (DP5 言及もなし)。 採択時の実装開始 (2026-08 想定) までに Beta 化されるかは継続 watch — 採択後 task A-5 (SDK 習得 plan) で再確認
 
 ## Sotto への影響
 

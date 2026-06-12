@@ -4,7 +4,7 @@
 |---|---|
 | source id | catalyst-landing |
 | URL | https://developer.android.com/develop/xr/catalyst |
-| fetched | 2026-05-23 |
+| fetched | 2026-05-23 (初回) / 2026-06-12 (再 fetch) |
 | method | WebFetch |
 | 用途 | Sotto pitch の根拠 URL、 締切 / 配送地域 / 評価軸 / 提供物の正本 |
 
@@ -43,6 +43,12 @@
 
 - 確認できる範囲では変更なし (締切 / 評価軸 / 提供物 が前回確認時と一致)
 - 但し WebFetch では timestamp 比較困難、 user が web で再 visit して subjective 差分検知すると確実
+
+## 2026-06-12 再 fetch (提出後)
+
+- **変更なし**: 締切 (6-30 11:59 PM PDT) / 結果通知 (7-15 まで) / 配送地域 (US/JP/UK/EU) / 評価軸 3 つ / 提供物、 全て 5-23 snapshot と一致。 cohort 2 / 締切延長 / FAQ 追加の記載なし
+- **微差分 (form 側のみ)**: 応募 form の intro は配送対象に **CA (カナダ) を追加済** (「US, CA, UK, EU, and Japan」、 2026-06-12 提出時確認) だが、 本 landing page は US/JP/UK/EU のまま。 Japan が対象である事実に影響なし
+- 同日、 応募 form 自体には構造変更あり (use case セクション新設等) → `../../../project-aura/application/form-structure-2026.md` の 2026-06-12 差分参照
 
 ## Sotto pitch への影響
 
