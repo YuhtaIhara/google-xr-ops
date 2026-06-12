@@ -65,7 +65,7 @@ My hands-on time with Kotlin and Android-adjacent technologies is under a year. 
 
 On the XR side: I have been a daily user of EVEN Realities G2 display glasses since March 2026 — roughly two to three months of hands-on time with a heads-up display in real-world contexts, primarily Conversate (G2's flagship conversational HUD use case). Prior to that, I built and dogfooded `even-memory-bridge` (now frozen, public on GitHub), a personal XR HUD + life-log + retrieval experiment on the same G2 hardware, for approximately five months. That project taught me where audio-only HUDs work and where they reach physical limits — the G2 cannot render code snippets, decision logs as visual lists, or architecture diagrams. Sotto on Aura is the natural progression: take the engineer-specific retrieval pipeline I already built, and render it as visual context the G2 hardware never could.
 
-On portfolio: I have not published a production app on Google Play. My open work is on github.com/YuhtaIhara — pinned public repositories include `even-memory-bridge` (the prior XR HUD experiment that informs Sotto's architecture), `google-xr-ops` (this submission's design and application work), `ai-driven-template` (workflow baseline patterns), and SharePoint RAG implementations (Azure design / pgvector + FastAPI). Pinned repositories reflect a working approach: solid design specs, clean structure, solo-maintainable scope, and visible dogfood evidence.
+On portfolio: I have not published a production app on Google Play. My open work is on github.com/YuhtaIhara — pinned public repositories are `even-memory-bridge` (the prior XR HUD experiment that informs Sotto's architecture) and `google-xr-ops` (this submission's design and application work), with SharePoint RAG implementations (Azure design / pgvector + FastAPI) linked from the profile README. The portfolio reflects a working approach: solid design specs, clean structure, solo-maintainable scope, and visible dogfood evidence.
 
 Domain expertise: I am the primary user persona for Sotto. As a mid-career indie engineer running multiple parallel projects, I weekly hit the moment where someone asks "why did you choose X?" about a months-old decision and I cannot recall the reasoning fast enough to answer credibly. That is not a researched insight — it is my Tuesday afternoon. I am the dogfooder, and that is the reason I trust the premise enough to spend nine months on it.
 
@@ -77,7 +77,7 @@ Kotlin / Android 触れて 1 年未満。 採択後 9 ヶ月 window を Jetpack 
 
 XR 経験: EVEN Realities G2 display glasses を 2026 年 3 月から毎日使用 (約 2-3 ヶ月)、 主に Conversate (G2 の flagship 会話 HUD)。 それ以前、 同 G2 hardware で `even-memory-bridge` (現在 frozen、 GitHub 公開) を約 5 ヶ月開発 + dogfood した経験あり (個人 XR HUD + life-log + retrieval 実験)。 G2 の audio-only HUD では code snippet / decision log の visual list / architecture diagram が出せない物理的限界に到達したのが、 Sotto を Aura visual HUD で実装する動機。
 
-Android 経験: Google Play 公開実績なし。 GitHub: github.com/YuhtaIhara、 pinned に even-memory-bridge (Sotto の前身 XR HUD 実験) / google-xr-ops (本応募の設計 + application work) / ai-driven-template (workflow baseline) / SharePoint RAG 実装 (Azure 設計 / pgvector + FastAPI)。 全 pinned が「設計 spec + clean structure + solo-maintainable scope + visible dogfood evidence」 を反映。
+Android 経験: Google Play 公開実績なし。 GitHub: github.com/YuhtaIhara、 pinned は even-memory-bridge (Sotto の前身 XR HUD 実験) / google-xr-ops (本応募の設計 + application work) の 2 個、 SharePoint RAG 実装 (Azure 設計 / pgvector + FastAPI) は profile README から link。 portfolio 全体が「設計 spec + clean structure + solo-maintainable scope + visible dogfood evidence」 を反映。
 
 ドメイン知識: 中堅 indie engineer 自身が Sotto の primary user persona。 複数 PJ 並行 + 多 client context switching で、 数ヶ月前の自分の決定について「なぜ X 設計を?」 と聞かれた瞬間に思い出せず credibility が落ちる経験を週単位で体感。 これは researched insight でなく user の火曜日午後そのもの、 dogfooder として 9 ヶ月の commitment を支える前提。
 
@@ -95,23 +95,24 @@ Portfolio: github.com/YuhtaIhara. Solo indie portfolio on GitHub. No published p
 
 - `even-memory-bridge` — frozen prior project. Personal XR HUD + life-log + retrieval experiment on EVEN Realities G2 audio glasses. Five months of dogfood. Contains the RAG pipeline, embedding/chunking, masking layer, and HUD state machine that Sotto reuses (60–70% of the MVP backbone, see attached component reuse document).
 - `google-xr-ops` — this submission's design specification, Catalyst application plan, and Even component reuse inventory.
-- `ai-driven-template` — a workflow baseline starter (`.claude/` configuration patterns) reflecting solo-maintainable development practices.
+
+Additional implementation work linked from the profile README:
+
 - `sharepoint-rag-azure` — Azure RAG PoC with design docs, IaC, and architecture diagrams.
 - `sharepoint-rag-lite` — SharePoint RAG implementation with pgvector + FastAPI + ACL.
 
 **日本語 reference:**
 
-Portfolio: github.com/YuhtaIhara。 Google Play 公開実績なし、 Sotto が初の Play target。 pinned 6 個 (Sotto への関連順):
+Portfolio: github.com/YuhtaIhara。 Google Play 公開実績なし、 Sotto が初の Play target。 pinned 2 個 (Sotto への関連順) + README link 2 個:
 
-- `even-memory-bridge`: frozen 前 PJ。 EVEN G2 audio glasses 上の XR HUD + life-log + retrieval 実験。 5 ヶ月 dogfood。 RAG pipeline / embedding / chunking / masking / HUD state machine を保有、 Sotto MVP backbone の 60-70% を流用 (添付 component reuse doc)
-- `google-xr-ops`: 本応募の設計 spec + plan + Even 流用 inventory
-- `ai-driven-template`: workflow baseline (`.claude/` 設定 pattern)
-- `sharepoint-rag-azure`: Azure RAG PoC + 設計 doc + IaC + architecture diagram
-- `sharepoint-rag-lite`: SharePoint RAG (pgvector + FastAPI + ACL)
+- `even-memory-bridge` (pinned): frozen 前 PJ。 EVEN G2 audio glasses 上の XR HUD + life-log + retrieval 実験。 5 ヶ月 dogfood。 RAG pipeline / embedding / chunking / masking / HUD state machine を保有、 Sotto MVP backbone の 60-70% を流用 (添付 component reuse doc)
+- `google-xr-ops` (pinned): 本応募の設計 spec + plan + Even 流用 inventory
+- `sharepoint-rag-azure` (README link): Azure RAG PoC + 設計 doc + IaC + architecture diagram
+- `sharepoint-rag-lite` (README link): SharePoint RAG (pgvector + FastAPI + ACL)
 
 **根拠:**
 
-form-structure-2026.md Page 2「Existing apps」(任意・自由記述 links)。 pin 6 個は Spice Sutra Task 5 で確定済 (PUBLIC + pin 完了)、 Sotto pivot でも構成不変。 言及順序のみ `even-memory-bridge` を冒頭に移動、 「前 PJ → Sotto への natural progression」 narrative を強化。
+form-structure-2026.md Page 2「Existing apps」(任意・自由記述 links)。 pin は 2026-06-07 に 2 個構成 (`even-memory-bridge` / `google-xr-ops`) に整理済、 sharepoint-rag 2 つは profile README link 経由 (delight-ihara org へ redirect、 public 200)、 `ai-driven-template` は private 化 404 のため削除 (2026-06-12 同期)。 `even-memory-bridge` 冒頭で「前 PJ → Sotto への natural progression」 narrative を強化。
 
 ---
 
