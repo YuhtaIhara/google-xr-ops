@@ -4,7 +4,7 @@
 
 ## 採否判断
 
-本テンプレでは hooks を **secret 漏洩 + 破壊操作の machine-level ガード** として **必須採用**。 削除しないこと (削除すると会社基準が崩れる)。
+本テンプレでは hooks を **secret 漏洩 + 破壊操作の machine-level ガード** として **必須採用**。 削除しないこと (削除するとベースライン規範が崩れる)。
 
 ### Windows 案件で PowerShell hook (.ps1) を使う場合
 

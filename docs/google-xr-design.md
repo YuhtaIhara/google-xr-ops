@@ -45,7 +45,7 @@ Google Android XR エコシステムを 2 方向で運用:
 
 | 借用元 | 何を借りる | どう移植 |
 |---|---|---|
-| `.claude/rules/` | 機密 / branching / permissions の会社基準 | template に既に含まれる |
+| `.claude/rules/` | 機密 / branching / permissions のベースライン規範 | template に既に含まれる |
 | `.claude/hooks/pre-tool-use.sh` | `.env*` 二重ガード + 破壊 cmd block + main 直 commit block | template に既に含まれる |
 | `knowledge/even-official/sources.yml` schema | YAML 構造 (id / url / priority / fetch_cadence / fetch_method / snapshot_file / note) | Phase 2 で google-xr-official/sources.yml に流用 |
 | `scripts/sync-even-official.sh` | 5 fetch method (zendesk-api / itunes-lookup-api / curl+textutil / git-clone / WebFetch) の sync script | Phase 2 で `scripts/sync-google-xr-official.sh` 派生作成、 source 差し替え |

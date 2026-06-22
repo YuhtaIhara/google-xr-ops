@@ -18,7 +18,7 @@
 | 10 | Timeline 2027-04-30 Play 公開 | ◯ | § Estimated Launch Date (line 263): "**2027-04-30**" |
 | 11 | Open source URL が動く | △ | `https://github.com/YuhtaIhara` は記載済 (line 32, 66, 92)。 ただし `google-xr-ops` と `ai-driven-template` の PUBLIC 化は Task 5 未完了のため、 form 提出前に確認要。 profile README の存在も Task 5 の作業項目 |
 | 12 | AI 痕跡 / 主体表現がない | △ | § Existing Apps (line 95) の form 提出用英文に "a personal AI-assisted development starter template" という記述あり。 これは repo の事実上の名称・説明 (`ai-driven-template`) であり、 「この pitch が AI 生成」 という主体表現ではないため致命的ではない。 ただし form 提出時は "a development starter template for AI-assisted coding workflows" 等の言い換えを検討 |
-| 13 | 会社名 `Delight Inc.` / `delight-x.co.jp` 露出ゼロ | ◯ | grep ヒットなし — クリーン |
+| 13 | 会社名 `(会社名)` / `(会社ドメイン)` 露出ゼロ | ◯ | grep ヒットなし — クリーン |
 | 14 | Category 3 multi | ◯ | line 185-197: Productivity + Health & Wellness + Education |
 | 15 | Target Region Global | ◯ | line 244-250: Global 選択 + rationale |
 | 16 | Development progress 1 (current) → 2 (Task 6 完了想定) | ◯ | line 222-229: current 1/10、 target 2/10 (Task 6 gating)、 re-evaluation note 付き |

@@ -52,7 +52,7 @@
 
 - 実値 (`.env`, `.env.local`, `.env.production`, etc.) は `permissions.deny` で代表パターンを禁止する。
 - permissions の glob は完全網羅できない (例: `apps/foo/.env.preview`)。 `.claude/hooks/pre-tool-use.sh` で網羅パターンをブロックし、 二重ガードを担保する。
-- `Read(.env*)` の allow 追加は禁止 (会社基準弱化)。
+- `Read(.env*)` の allow 追加は禁止 (ベースライン規範弱化)。
 
 ## hooks の役割境界
 

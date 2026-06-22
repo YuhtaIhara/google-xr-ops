@@ -10,7 +10,7 @@
 |------|------|-----------|
 | `settings.json` | 共有 permissions / hooks 登録 | `rules/permissions.md` |
 | `settings.local.example.json` | 個人ローカル override 雛形 (env / model / statusLine、 commit しない) | `rules/permissions.md` |
-| `rules/` | AI 規範 (会社基準) の正本 (会社 4 file) | `rules/README.md` |
+| `rules/` | AI 規範 (ベースライン規範) の正本 (会社 4 file) | `rules/README.md` |
 | `hooks/` | ライフサイクル shell script (PreToolUse) | `hooks/README.md` |
 | `skills/` | 再利用可能な手順 (案件で追加、 テンプレでは空) | `skills/README.md` |
 | `agents/` | subagent 定義 (案件で追加、 テンプレでは空) | `agents/README.md` |
@@ -21,7 +21,7 @@
 
 ## 「どこに何の正本があるか」
 
-- **AI 規範 (会社基準)**: `rules/`
+- **AI 規範 (ベースライン規範)**: `rules/`
 - **lifecycle 自動化 (machine-level ガード)**: `hooks/` (本体) + `settings.json` (登録)
 - **共有 permissions**: `settings.json`
 - **個人 overrides**: `settings.local.json` (gitignore、 雛形のみテンプレに残す)
@@ -63,7 +63,7 @@ Claude Code は session 開始時に CLAUDE.md を walk up + concatenate する:
 ## 設計原則
 
 - **AI 規範は `.claude/` が正本**: 公式 BP に準拠して `rules/` / `hooks/` を canonical とする。
-- **薄い CLAUDE.md + 薄い rules**: 案件で埋める部分は CLAUDE.md (200 行以下)、 会社基準は rules が必要最小限で持つ。
+- **薄い CLAUDE.md + 薄い rules**: 案件で埋める部分は CLAUDE.md (200 行以下)、 ベースライン規範は rules が必要最小限で持つ。
 - **AI 痕跡を残さない**: commit message / PR 本文に「AI 駆動」「Claude が」 等の主体表現を入れない。
 
 ## 関連

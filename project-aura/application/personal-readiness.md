@@ -30,7 +30,7 @@ pinned public repositories (`github.com/YuhtaIhara`、 Sotto narrative 順):
 
 profile README「Pinned work」section からの追加 link (pin 外、 公開到達可能):
 
-- **`sharepoint-rag-azure`** — Azure RAG PoC + 設計 doc + IaC + architecture diagram (`delight-ihara` org へ redirect、 public 200)。
+- **`sharepoint-rag-azure`** — Azure RAG PoC + 設計 doc + IaC + architecture diagram (`別 org` org へ redirect、 public 200)。
 - **`sharepoint-rag-lite`** — SharePoint RAG 実装 (pgvector + FastAPI + ACL) (同上)。
 
 > **2026-06-12 同期修正**: pin は 2026-06-07 に user 手動で 2 個構成 (`google-xr-ops` / `even-memory-bridge`) に整理済 (会社 org repo を pin から除去)。 `ai-driven-template` は org transfer + private 化で reviewer 404 のため全 reviewer-facing 文面から削除。 sharepoint-rag 2 つは README link 経由で到達可能なため「README link」 として言及を維持。 旧「pinned 5 個」 表現は form-final-draft-sotto.md / pitch-outline-sotto.md / spec § 9 とともに本日同期済。
